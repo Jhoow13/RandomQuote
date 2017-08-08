@@ -9,12 +9,13 @@
 	<main>
 		<h1>Random Quote</h1>
 		<article>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis saepe libero ratione placeat error eveniet qui, magni facilis, enim ex quam. Quidem, repellat doloribus maxime illum blanditiis minus illo earum.
+			<p id="quote">
+				<div class="loader"></div>				
 			</p>
+			<small id="author"></small>
 			<section class="buttons">
-				<button>Tweet</button>
-				<button>New Quote</button>
+				<a class="twitter-share-button" id="tweet-button" target="_blank">Tweet</a>
+				<button onclick="GenerateQuote()">New Quote</button>
 			</section>
 		</article>
 	</main>
