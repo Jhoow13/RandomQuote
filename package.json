@@ -1,0 +1,23 @@
+{
+  "name": "random-quote",
+  "version": "1.0.0",
+  "description": "Simple random quote generator",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jhoow13/RandomQuote.git"
+  },
+  "author": "joelcsilva@outlook.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jhoow13/RandomQuote/issues"
+  },
+  "homepage": "https://github.com/Jhoow13/RandomQuote#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
+  }
+}
