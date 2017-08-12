@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300');
+
+main {	
+	box-sizing: border-box;
+	padding: 15px;
+	width: 500px;
+	min-height: 250px;
+	margin: 150px auto;
+	background-color: #fff;	
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1, p#quote{
+	text-align: center;
+}
+
+p#author {
+	text-align: right;
+}
+
+a{
+	text-decoration: none;
+}
+ 
+.btn{	
+    outline: none;    
+    border: none;
+    padding: 10px;
+    cursor: pointer;	
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.btn:hover{
+	box-shadow: 2px 2px 5px #ccc;
+}
+
+button.btn{
+	float: right;
+}
+
 .loader {
     border: 5px solid #f3f3f3;
     border-top: 5px solid #000; 

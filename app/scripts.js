@@ -15,7 +15,11 @@ function teste(){
 
 }
 
-document.body.style.backgroundColor =  randomColor();
+var color = randomColor();
+document.body.style.backgroundColor = color;
+document.body.style.color = color;
+document.querySelectorAll('.btn').forEach(function(itemBtn){itemBtn.style.backgroundColor = color});
+
 
 function GenerateQuote() {
 	var key = "omnQU3dPsemshJ2JB1phkoGkYPP1p1mHdNQjsnJhjV1QvYkJsc"
@@ -25,7 +29,7 @@ function GenerateQuote() {
 	    if (this.readyState == 4 && this.status == 200) {            
 	        var teste = JSON.parse(xhttp.response);
 	        document.querySelector('#quote').innerHTML = '"' + teste.quote + '"';
-	        document.querySelector('#author').innerHTML = teste.author;
+	        document.querySelector('#author').innerHTML = '- ' + teste.author;
 	        document.querySelector('.loader').style.display = 'none'
 
 	        document.querySelector("#tweet-button").setAttribute('href', '"https://twitter.com/intent/tweet?hashtags=quotes&text='+ encodeURIComponent(teste.quote+ ' - ' + teste.author));
