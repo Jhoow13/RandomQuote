@@ -5,21 +5,12 @@ function randomColor() {
         color += values[Math.floor(Math.random() * 16)];
     }
     return color;
-}  
-
-function teste(){
-
-	setTimeout(function(){
-		window.location.reload();
-	}, 5000)
-
 }
 
 var color = randomColor();
 document.body.style.backgroundColor = color;
 document.body.style.color = color;
 document.querySelectorAll('.btn').forEach(function(itemBtn){itemBtn.style.backgroundColor = color});
-
 
 function GenerateQuote() {
 	var key = "omnQU3dPsemshJ2JB1phkoGkYPP1p1mHdNQjsnJhjV1QvYkJsc"
