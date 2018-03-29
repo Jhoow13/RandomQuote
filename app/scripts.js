@@ -1,34 +1,42 @@
-function randomColor() {
-    var values = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += values[Math.floor(Math.random() * 16)];
-    }
-    return color;
+let randomColor = () => {
+  let random = Math.floor(Math.random() * 2) + 1;
+
+  if (random == 2) {
+    let colors = ['#0088ff', '#cd0a20', '#444444', '#002050', '#64a70b'];
+    let color = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = color;
+    document.body.style.color = color;
+    document.querySelectorAll('.btn').forEach((itemBtn) => {
+      itemBtn.style.backgroundColor = color
+      itemBtn.style.color = "white";
+    });
+
+  } else {
+    let colors = ['#f47721', '#ff6c5f', '#00c6d7', '#969696', '#5f99cf'];
+    let color = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = color;
+    document.body.style.color = color;
+    document.querySelector('.btn').style.backgroundColor = color;
+
+    document.querySelectorAll('.btn').forEach((itemBtn) => {;
+      itemBtn.style.backgroundColor = color
+      itemBtn.style.color = "black";
+    });
+  }
 }
 
-var color = randomColor();
-document.body.style.backgroundColor = color;
-document.body.style.color = color;
-document.querySelectorAll('.btn').forEach(function(itemBtn){itemBtn.style.backgroundColor = color});
-
-function GenerateQuote() {
-	var key = "omnQU3dPsemshJ2JB1phkoGkYPP1p1mHdNQjsnJhjV1QvYkJsc"
-	var urlTeste = "https://andruxnet-random-famous-quotes.p.mashape.com/"
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function () {
-	    if (this.readyState == 4 && this.status == 200) {            
-	        var teste = JSON.parse(xhttp.response);
-	        document.querySelector('#quote').innerHTML = '"' + teste.quote + '"';
-	        document.querySelector('#author').innerHTML = '- ' + teste.author;
-	        document.querySelector('.loader').style.display = 'none'
-
-	        document.querySelector("#tweet-button").setAttribute('href', '"https://twitter.com/intent/tweet?hashtags=quotes&text='+ encodeURIComponent(teste.quote+ ' - ' + teste.author));
-	    }
-	};
-	xhttp.open("GET", urlTeste, true);
-	xhttp.setRequestHeader('X-Mashape-Key', key);
-	xhttp.send(); 
+let getQuote = () => {
+  fetch("https://favqs.com/api/qotd")
+    .then((response) => {
+      response.json()
+        .then((data) => {
+          document.querySelector('#quote').innerHTML = `"${data.quote.body}"`
+          document.querySelector('#author').innerHTML = `- ${data.quote.author}`;
+          document.querySelector('.loader').style.display = 'none'
+          document.querySelector("#tweet-button").href = `https://twitter.com/intent/tweet?hashtags=quotes&text=${data.quote.body} - ${data.quote.author}`;
+        })
+    });
 }
 
-GenerateQuote();
+randomColor();
+getQuote();
