@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300');
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 15px;
+  max-width: 500px;
+	background-color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1, p#quote{
+	text-align: center;
+}
+
+p#author {
+	text-align: right;
+}
+
+a{
+	text-decoration: none;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.btn:hover{
+	box-shadow: 2px 2px 5px #ccc;
+}
+
+section{
+  display: flex;
+  justify-content: space-between;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
