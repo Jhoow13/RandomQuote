@@ -34,6 +34,7 @@ let getQuote = () => {
           document.querySelector('#author').innerHTML = `- ${data.quote.author}`;
           document.querySelector('.loader').style.display = 'none'
           document.querySelector("#tweet-button").href = `https://twitter.com/intent/tweet?hashtags=quotes&text=${data.quote.body} - ${data.quote.author}`;
+          randomColor();
         })
     });
 }
