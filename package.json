@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/Jhoow13/RandomQuote#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.4.0"
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1"
   }
 }
